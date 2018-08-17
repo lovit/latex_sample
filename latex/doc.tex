@@ -1,0 +1,138 @@
+% Set parameters
+% set font size
+\documentclass[11pt]{article}
+
+% set line height
+\renewcommand{\baselinestretch}{1.5}
+
+% line number
+\usepackage{lineno}
+
+% today
+\renewcommand{\today}{}
+
+% set margin
+\usepackage{geometry}
+\geometry{a4paper, left=15mm, right=15mm, top=20mm, bottom=20mm}
+
+% for using Korean
+\usepackage{kotex}
+
+% for using multi-languages
+\usepackage[english]{babel}
+
+% for urls
+\usepackage{hyperref}
+
+% for equation
+\usepackage{amsmath}
+
+% for bibliography
+\usepackage{apacite}
+\usepackage[numbers]{natbib}
+
+% for drawing table
+\usepackage{array,multirow,graphicx,rotating,booktabs}
+\usepackage[table,xcdraw]{xcolor}
+
+% for tabularx
+\usepackage{tabularx}
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\renewcommand\arraystretch{0.8} \setlength\minrowclearance{0.8pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{Title example}
+\author{
+  Hyunjoong Kim\\
+  \texttt{soy.lovit@gmail.com}
+  \and
+  Lovit\\
+  \texttt{soy.lovit@gmail.com}
+}
+
+\maketitle
+\smallskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+인트로를 씁니다.
+다음 줄로 넘어가도 하나의 단락 안에 포함됩니다.
+
+빈 줄을 하나 이상 추가하면 다음 단락으로 만들어집니다.
+
+\noindent
+들여쓰기를 하지 않으려면 noindent 를 입력합니다.
+
+다음 단락은 들여쓰기가 다시 됩니다.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{목차 단위}
+
+section 을 입력하면 1, 2, 3 장 이 됩니다.
+
+subsection 을 입력하면 1.1, 1.2, ... 2.1 장이 됩니다. section 의 번호를 따라갑니다.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{두번째 장}
+
+코드의 가독성을 위하여 section 마다 주석코드인 \% 를 나열하면 좋습니다.
+
+\section{Reference 달기}
+
+citep 를 이용합니다. bib 파일에 있는 idx 를 citep 에 넣습니다. \citep{jain2010data} 대괄호 안에 여러 개의 idx 를 , 로 연결할 수 있습니다.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Equation}
+
+수식 영역도 begin, end 로 지정합니다.
+centering 은 가운데 정렬을 도와줍니다.
+수식, 그림, 표를 다른 곳에서 호출하기 위해서는 label 을 지정해줍니다.
+equation 형식이라는 의미로 eq, 이 함수의 이름은 kpartition 이라 정의합니다.
+
+\begin{equation}
+\label{eq:kpartition}
+\centering
+arg min_C\sum_{i=1}^{k} \sum_{x \in C_i} \vert x - \mu_i \vert^2 = arg min_C \sum_{i=1}^{k} \vert C_i \vert Var(C_i)
+\end{equation}
+
+지정된 수식은 ref 를 이용하여 링크를 걸 수 있습니다 (수식 \ref{eq:kpartition})
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{표 만들기}
+
+표를 만들기 위해서는 직접 코드를 짜도 좋지만, online table generator \footnote{\url{https://www.tablesgenerator.com/latex_tables}} 를 이용할 수도 있습니다. 
+이 사이트에서는 csv 파일을 읽어서 이를 표로 만들어주기도 합니다.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{그림 참조}
+
+만들어진 그림도 링크를 걸 수 있습니다. (그림 \ref{fig:community_detection})
+
+\begin{figure}[ht]
+\centering
+\includegraphics[keepaspectratio=true, width=0.5\linewidth]{figures/community_detection.png}
+\caption{caption 에 텍스트를 넣습니다.}
+\label{fig:community_detection}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Latex to pdf}
+
+Latex compiler 를 이용해도 됩니다.
+하지만 latex 설치를 하고 싶지 않다면, (그 과정에서 겪는 어려움을 피하고 싶다면) overleaf.com 과 같은 온라인 서비스를 이용할 수도 있습니다.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibliographystyle{unsrtnat}
+\bibliographystyle{apacite}
+\bibliography{reference}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Appendix}
+
+section* 를 이용하면 번호가 붙지 않는 section 이 만들어집니다.
+
+\end{document}
