@@ -27,6 +27,9 @@
 % for equation
 \usepackage{amsmath}
 
+% for fixing figure position
+\usepackage{float}
+
 % for bibliography
 \usepackage{apacite}
 \usepackage[numbers]{natbib}
@@ -78,7 +81,7 @@
 각 commit 마다 comment 를 달 수 있습니다.
 짧은 내용에 대한 논의 및 메모는 이를 통하여 할 수 있습니다.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
 \includegraphics[keepaspectratio=true, width=0.8\linewidth]{figures/git-commit-comment.png}
 \caption{github commit 에 comment 를 달아둔 snapshot}
@@ -96,7 +99,7 @@
 이 때 각 일의 단위 별로 branch 를 만들어 수정 작업을 하면 그 단위 별로 commit log 가 정리되어 보입니다.
 최종 수정본은 master branch 로 merging 합니다.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
 \includegraphics[keepaspectratio=true, width=0.8\linewidth]{figures/github-branch.png}
 \caption{github commit 에 comment 를 달아둔 snapshot}
@@ -110,7 +113,7 @@
 수정해야 하는 부분이 있고, 이를 누군가에게 assign 할 일도 있다면 github issue board 를 이용할 수 있습니다.
 github 의 issue 에 해야 할 일을 적어두고, 해결된 뒤에는 issue 를 close 합니다.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
 \includegraphics[keepaspectratio=true, width=0.8\linewidth]{figures/github-issue.png}
 \caption{github commit 에 comment 를 달아둔 snapshot}
